@@ -5,17 +5,19 @@ import java.util.Scanner;
 public class Main {
 
 	public static void main(String[] args) {
-		Rettangolo rettangolo=new Rettangolo(0,0);
+		int base;
+		int altezza;
+		
 		Scanner scan=new Scanner(System.in);
 		do {
 		System.out.print("inserisci la base del rettangolo positiva ");
-		rettangolo.base=scan.nextInt();
-		}while(rettangolo.base<0);
+		base=scan.nextInt();
+		}while(base<0);
 		do {
 		System.out.print("inserisci l'altezza del rettangolo positiva ");
-		rettangolo.altezza=scan.nextInt();
-		}while(rettangolo.altezza<0 || rettangolo.base<0);
-		
+		altezza=scan.nextInt();
+		}while(altezza<0);
+		Rettangolo rettangolo=new Rettangolo(altezza,base);
 		System.out.println("l'area è :" +rettangolo.calcolaArea());
 		System.out.println("il perimetro è :" +rettangolo.calcolaPerimetro());
 		
